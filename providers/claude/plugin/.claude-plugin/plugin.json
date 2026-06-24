@@ -1,0 +1,25 @@
+{
+  "name": "now",
+  "version": "0.1.0",
+  "description": "OperatorZero ServiceNow Plugin adds a /now workflow for ServiceNow: live instance evidence, safety/governance checks, approved execution, governed GlideRecord scripting, verification, privacy controls, and sanitized local history.",
+  "author": {
+    "name": "OperatorZero",
+    "url": "https://github.com/mitchellOpZero"
+  },
+  "homepage": "https://github.com/mitchellOpZero/operatorzero-servicenow-plugin",
+  "repository": "https://github.com/mitchellOpZero/operatorzero-servicenow-plugin",
+  "license": "MIT",
+  "keywords": [
+    "servicenow",
+    "now-platform",
+    "operatorzero-servicenow-plugin",
+    "operatorzero",
+    "gliderecord",
+    "governance",
+    "mcp",
+    "claude-code",
+    "developer-tools",
+    "automation"
+  ],
+  "displayName": "OperatorZero ServiceNow Plugin"
+}

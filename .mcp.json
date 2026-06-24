@@ -1,0 +1,12 @@
+{
+  "mcpServers": {
+    "operatorzero-servicenow-plugin": {
+      "command": "node",
+      "args": [
+        "./dist/index.js"
+      ],
+      "cwd": "."
+    }
+  }
+}
+

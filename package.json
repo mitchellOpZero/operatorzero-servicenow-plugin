@@ -1,0 +1,70 @@
+{
+  "name": "operatorzero-servicenow-plugin",
+  "version": "0.1.0",
+  "description": "Claude Code plugin for governed ServiceNow development with SDK auth, live instance context, safety checks, approvals, GlideRecord scripting, and verification.",
+  "type": "module",
+  "main": "dist/index.js",
+  "bin": {
+    "operatorzero-now": "./dist/index.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "setup": "node scripts/operatorzero-setup.mjs setup",
+    "doctor": "node scripts/operatorzero-setup.mjs doctor",
+    "mcp:config": "node scripts/operatorzero-setup.mjs mcp-config",
+    "start": "node dist/index.js",
+    "dev": "tsx src/index.ts",
+    "test": "npm run build",
+    "audit:prod": "npm audit --omit=dev",
+    "prepack": "npm run build"
+  },
+  "files": [
+    ".claude-plugin/",
+    ".claude/",
+    ".env.example",
+    ".mcp.json",
+    "dist/",
+    "examples/",
+    "providers/",
+    "scripts/",
+    "servicenow/",
+    "src/",
+    "SECURITY.md"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mitchellOpZero/operatorzero-servicenow-plugin.git"
+  },
+  "homepage": "https://github.com/mitchellOpZero/operatorzero-servicenow-plugin#readme",
+  "bugs": {
+    "url": "https://github.com/mitchellOpZero/operatorzero-servicenow-plugin/issues"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.0.0",
+    "zod": "^3.25.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "tsx": "^4.0.0",
+    "typescript": "^5.0.0"
+  },
+  "engines": {
+    "node": ">=20.18.0"
+  },
+  "keywords": [
+    "operatorzero",
+    "servicenow",
+    "now-platform",
+    "claude-code",
+    "claude-code-plugin",
+    "mcp",
+    "governance",
+    "gliderecord",
+    "servicenow-sdk",
+    "service-portal",
+    "automation",
+    "agentic-development"
+  ],
+  "author": "OperatorZero",
+  "license": "MIT"
+}

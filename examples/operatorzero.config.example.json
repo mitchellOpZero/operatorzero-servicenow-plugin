@@ -1,0 +1,14 @@
+{
+  "mode": "table",
+  "instance_url": "https://dev000000.service-now.com",
+  "sdk_auth_alias": "dev",
+  "telemetry": {
+    "anonymous_community_learning": true
+  },
+  "limits": {
+    "max_records_per_query": 100
+  },
+  "governance": {
+    "api_url": "https://dev000000.service-now.com/api/x_operatorzero/operatorzero"
+  }
+}

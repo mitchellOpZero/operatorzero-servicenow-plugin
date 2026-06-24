@@ -1,0 +1,42 @@
+{
+  "name": "operatorzero-servicenow-plugin",
+  "owner": {
+    "name": "OperatorZero",
+    "url": "https://github.com/mitchellOpZero"
+  },
+  "metadata": {
+    "description": "OperatorZero ServiceNow Plugin \u2014 a ServiceNow development workflow for Claude Code with live instance context, safety/governance checks, approved execution, governed GlideRecord scripting, and verification.",
+    "version": "0.1.0",
+    "displayName": "OperatorZero ServiceNow Plugin",
+    "keywords": [
+      "ServiceNow",
+      "Now Platform",
+      "Claude Code",
+      "MCP",
+      "governance",
+      "GlideRecord",
+      "automation",
+      "developer tools"
+    ]
+  },
+  "plugins": [
+    {
+      "name": "now",
+      "source": "./providers/claude/plugin/",
+      "description": "Use /now to inspect, explain, update, run governed GlideRecord scripts, and verify ServiceNow work with live evidence and approval guardrails.",
+      "version": "0.1.0",
+      "author": {
+        "name": "OperatorZero"
+      },
+      "displayName": "OperatorZero ServiceNow Plugin",
+      "keywords": [
+        "ServiceNow",
+        "Now Platform",
+        "Claude Code",
+        "MCP",
+        "governance",
+        "GlideRecord"
+      ]
+    }
+  ]
+}
