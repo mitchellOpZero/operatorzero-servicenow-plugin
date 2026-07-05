@@ -9,6 +9,7 @@
   },
   "scripts": {
     "build": "tsc",
+    "build:plugin": "npm run build && esbuild dist/index.js --bundle --platform=node --format=cjs --outfile=providers/claude/plugin/server/index.js --define:import.meta.url=__importMetaUrl \"--banner:js=const __importMetaUrl = require('node:url').pathToFileURL(__filename).href;\"",
     "setup": "node scripts/operatorzero-setup.mjs setup",
     "doctor": "node scripts/operatorzero-setup.mjs doctor",
     "mcp:config": "node scripts/operatorzero-setup.mjs mcp-config",
@@ -45,6 +46,7 @@
   },
   "devDependencies": {
     "@types/node": "^20.0.0",
+    "esbuild": "^0.28.1",
     "tsx": "^4.0.0",
     "typescript": "^5.0.0"
   },
