@@ -1,6 +1,6 @@
 {
   "name": "now",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "OperatorZero ServiceNow Plugin adds a /now workflow for ServiceNow: live instance evidence, safety/governance checks, approved execution, governed GlideRecord scripting, verification, privacy controls, and sanitized local history.",
   "author": {
     "name": "OperatorZero",

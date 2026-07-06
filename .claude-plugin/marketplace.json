@@ -6,7 +6,7 @@
   },
   "metadata": {
     "description": "OperatorZero ServiceNow Plugin \u2014 a ServiceNow development workflow for Claude Code with live instance context, safety/governance checks, approved execution, governed GlideRecord scripting, and verification.",
-    "version": "0.1.0",
+    "version": "0.1.1",
     "displayName": "OperatorZero ServiceNow Plugin",
     "keywords": [
       "ServiceNow",
@@ -24,7 +24,7 @@
       "name": "now",
       "source": "./providers/claude/plugin/",
       "description": "Use /now to inspect, explain, update, run governed GlideRecord scripts, and verify ServiceNow work with live evidence and approval guardrails.",
-      "version": "0.1.0",
+      "version": "0.1.1",
       "author": {
         "name": "OperatorZero"
       },
