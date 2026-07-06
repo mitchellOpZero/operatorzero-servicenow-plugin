@@ -144,6 +144,8 @@ For source-controlled ServiceNow SDK app work. OperatorZero keeps the SDK login 
 
 Governance mode is the recommended team path. `/now setup` can deploy the ServiceNow-side Governance API to a PDI, dev, or sub-production instance. That gives team leads a ServiceNow-side policy boundary for approve, warn, or block decisions before writes or governed server-side scripts run. You need permission to create or update Script Includes and Scripted REST APIs.
 
+The default policy is deny-by-default on the security boundary, allow everything else. Normal development tables (portal widgets, catalog, knowledge, business rules, flows, and so on) are writable through the standard check, approve, and verify flow. Writes are blocked to the tables that change who can do what: identity (`sys_user`), roles and privilege escalation (`sys_user_has_role`, `sys_group_has_role`, `sys_user_role`, `sys_user_grmember`, `sys_scope_privilege`), access control (`sys_security_acl`, `sys_security_acl_role`), auth and credentials (`sys_auth_profile`, `sys_oauth_client`, `oauth_entity`, `oauth_credential`, `sys_certificate`), and system-wide configuration or code-as-system (`sys_properties`, `sys_script_fix`). Entire security namespaces (`sys_security*`, `oauth_*`, `sys_auth_*`) fail closed by prefix, so sensitive tables not listed explicitly are still blocked. Team leads can tune the deny list in the `OperatorZero_Governance_API` Script Include, and every connected developer inherits the change immediately.
+
 You can still use OperatorZero without installing anything inside ServiceNow. In that case, local safety checks are built in and the plugin uses the Table API for approved dev/sub-production changes.
 
 ## Safety and privacy

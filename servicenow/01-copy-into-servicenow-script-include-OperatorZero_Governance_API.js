@@ -18,34 +18,24 @@ OperatorZero_Governance_API.prototype = {
             'sys_user',
             'sys_user_has_role',
             'sys_group_has_role',
+            'sys_user_role',
+            'sys_user_grmember',
             'sys_security_acl',
+            'sys_security_acl_role',
             'sys_properties',
             'sys_auth_profile',
             'sys_oauth_client',
             'oauth_entity',
+            'oauth_credential',
             'sys_certificate',
             'sys_script_fix',
             'sys_scope_privilege'
         ].join(','));
 
-        this.allowedWriteTables = this._csv([
-            'sys_script',
-            'sys_script_include',
-            'sys_ui_script',
-            'sys_ui_policy',
-            'sys_ui_policy_action',
-            'sys_hub_flow',
-            'sys_hub_flow_base',
-            'sys_hub_action_type_definition',
-            'sys_hub_sub_flow',
-            'sc_cat_item',
-            'item_option_new',
-            'io_set_item',
-            'catalog_script_client',
-            'catalog_ui_policy',
-            'sys_ui_message',
-            'sys_documentation'
-        ].join(','));
+        // Deny-list model: writes are allowed unless the table (or a security
+        // namespace prefix) is blocked. Escalation boundary = identity, roles,
+        // ACLs, auth, certificates, system properties.
+        this.blockedTablePrefixes = /^(sys_security|oauth_|sys_auth_)/;
     },
 
     execute: function(params) {
@@ -157,8 +147,7 @@ OperatorZero_Governance_API.prototype = {
         if (!table) reasons.push('table_required');
 
         if (this._isProduction()) reasons.push('production_instances_are_read_only_by_default');
-        if (table && this.blockedWriteTables[table]) reasons.push('table_is_blocked_by_governance_api');
-        if (table && !this.allowedWriteTables[table]) reasons.push('table_is_not_in_governance_write_allowlist');
+        if (table && (this.blockedWriteTables[table] || this.blockedTablePrefixes.test(table))) reasons.push('table_is_blocked_by_governance_api');
 
         if (operation === 'delete') {
             warnings.push('delete_operation_requires_extra_confirmation');
